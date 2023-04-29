@@ -1,4 +1,4 @@
-package co.edu.uniandes.vynilsg12.ui.dashboard
+package co.edu.uniandes.vinylsg12.ui.dashboard
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

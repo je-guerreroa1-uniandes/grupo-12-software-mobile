@@ -1,4 +1,4 @@
-package co.edu.uniandes.vynilsg12.ui.dashboard
+package co.edu.uniandes.vinylsg12.ui.dashboard
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import co.edu.uniandes.vynilsg12.databinding.FragmentDashboardBinding
+import co.edu.uniandes.vinylsg12.databinding.FragmentDashboardBinding
 
 class DashboardFragment : Fragment() {
 
@@ -18,12 +18,12 @@ class DashboardFragment : Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View {
         val dashboardViewModel =
-                ViewModelProvider(this).get(DashboardViewModel::class.java)
+            ViewModelProvider(this).get(DashboardViewModel::class.java)
 
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
