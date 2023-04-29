@@ -1,4 +1,4 @@
-package co.edu.uniandes.vynilsg12
+package co.edu.uniandes.vinylsg12
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package co.edu.uniandes.vynilsg12
+package co.edu.uniandes.vinylsg12
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("co.edu.uniandes.vynilsg12", appContext.packageName)
+        assertEquals("co.edu.uniandes.vinylsg12", appContext.packageName)
     }
 }

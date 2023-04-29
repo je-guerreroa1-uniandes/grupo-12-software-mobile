@@ -1,4 +1,4 @@
-package co.edu.uniandes.vynilsg12.ui.notifications
+package co.edu.uniandes.vinylsg12.ui.notifications
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import co.edu.uniandes.vynilsg12.databinding.FragmentNotificationsBinding
+import co.edu.uniandes.vinylsg12.databinding.FragmentNotificationsBinding
 
 class NotificationsFragment : Fragment() {
 
@@ -18,12 +18,12 @@ class NotificationsFragment : Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View {
         val notificationsViewModel =
-                ViewModelProvider(this).get(NotificationsViewModel::class.java)
+            ViewModelProvider(this).get(NotificationsViewModel::class.java)
 
         _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
         val root: View = binding.root
