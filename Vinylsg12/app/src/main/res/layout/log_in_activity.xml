@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/im_background_vinyl"
+    tools:context=".splash_screen_activity">
+
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/merge_logo_vinyl"
+        />
+
+    <EditText
+        android:id="@+id/et_username"
+        style="@style/Theme.EditTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:drawableStart="@drawable/ic_username"
+        android:hint="@string/hint_username"
+        android:layout_marginTop="276dp"
+        android:minHeight="48dp"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:background="@color/secondary_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_login"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/background_button_select"
+        android:fontFamily="@font/averia_libre_regular"
+        android:text="@string/btn_login"
+        android:textSize="20dp"
+        android:textColor="@color/primary_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

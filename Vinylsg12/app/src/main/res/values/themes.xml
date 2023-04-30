@@ -13,4 +13,18 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.EditTextStyle" parent="Theme.VinylsG12">
+        <item name="android:textSize">@dimen/text_size_default</item>
+        <item name="android:drawablePadding">@dimen/padding_default</item>
+        <item name="android:fontFamily">@font/averia_libre_regular</item>
+        <item name="android:textColor">@color/primary_text</item>
+    </style>
+
+    <style name="Theme.ButtonStyle" parent="Theme.VinylsG12">
+        <item name="android:textSize">@dimen/text_size_default</item>
+        <item name="android:layout_margin">@dimen/margin_default</item>
+        <item name="android:backgroundTint">@color/primary_color</item>
+        <item name="android:textColor">@color/primary_text</item>
+    </style>
 </resources>
