@@ -3,4 +3,15 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="title_activity_splash_screen">splash_screen_activity</string>
+    <string name="title_activity_splash2">splashActivity2</string>
+
+    <string name="btn_login">Log In</string>
+    <string name="btn_signup">Sign Up</string>
+    <string name="tv_vinyl">Vinyl</string>
+    <string name="tv_collections">Collections</string>
+    <string name="just_visit">Just visit collections</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="title_activity_prueba">PruebaActivity</string>
 </resources>
