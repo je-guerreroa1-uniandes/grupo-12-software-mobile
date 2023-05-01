@@ -18,3 +18,13 @@ El proyecto se encuentra repartido entre las siguientes carpetas:
 ## Evidencia de HU
 
 * [(HU01 - Listado albums), (HU02 - Detalle album)](https://github.com/je-guerreroa1-uniandes/grupo-12-software-mobile/blob/develop/BuildBundles/1.0.1/DetalleAlbum.webm)
+
+## Control de cambios
+
+### 1.0.0
+
+* Implementación HU01 - Listado de albums
+
+### 1.0.1
+
+* Implementación HU02 - Detalle de album
