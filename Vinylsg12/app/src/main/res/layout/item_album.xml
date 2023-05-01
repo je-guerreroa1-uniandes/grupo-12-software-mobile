@@ -43,6 +43,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:fontFamily="@font/averia_libre"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textStyle="bold" />
 
@@ -51,6 +52,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/albumTitle"
+                    android:fontFamily="@font/averia_libre"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                 <TextView
@@ -58,6 +60,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/albumTitle"
+                    android:fontFamily="@font/averia_libre"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small" />
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
