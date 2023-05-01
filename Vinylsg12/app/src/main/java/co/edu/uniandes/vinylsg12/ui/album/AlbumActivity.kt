@@ -23,9 +23,10 @@ class AlbumActivity : AppCompatActivity() {
         albumViewModel.album.observe(this) {
             val album = it ?: return@observe
             binding.albumTitle.text = album.name
-
-//            binding.albumReleaseDate.text = album.releaseDate
-//            binding.albumGenre.text = album.genre
+            binding.albumReleaseDate.text = album.releaseDate
+            binding.albumGenre.text = album.genre
+            binding.albumDescription.text = album.description
+            binding.albumRecordLabel.text = album.recordLabel
             Glide.with(binding.albumImage)
                 .load(album.cover)
                 .into(binding.albumImage)
