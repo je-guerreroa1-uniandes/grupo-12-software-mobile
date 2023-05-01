@@ -1,10 +1,12 @@
 package co.edu.uniandes.vinylsg12.ui.home.adapters
 
+import android.content.Intent
 import androidx.recyclerview.widget.RecyclerView
 import co.edu.uniandes.vinylsg12.common.api.models.Album
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import co.edu.uniandes.vinylsg12.databinding.ItemAlbumBinding
+import co.edu.uniandes.vinylsg12.ui.album.AlbumActivity
 import com.bumptech.glide.Glide
 
 class AlbumAdapter(public var albums: List<Album>): RecyclerView.Adapter<AlbumAdapter.AlbumViewHolder>(){
@@ -30,6 +32,13 @@ class AlbumAdapter(public var albums: List<Album>): RecyclerView.Adapter<AlbumAd
             Glide.with(binding.albumImage)
                 .load(album.cover)
                 .into(binding.albumImage)
+
+            binding.root.setOnClickListener {
+                val intent = Intent(binding.root.context, AlbumActivity::class.java).apply {
+                    putExtra(AlbumActivity.EXTRA_ALBUM_ID, album.id)
+                }
+                binding.root.context.startActivity(intent)
+            }
         }
     }
 }

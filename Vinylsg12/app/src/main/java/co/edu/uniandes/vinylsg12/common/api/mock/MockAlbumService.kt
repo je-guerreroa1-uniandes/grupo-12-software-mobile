@@ -12,13 +12,20 @@ class MockAlbumService(): AlbumService{
     ) {
         try {
             val inputStream = javaClass.classLoader?.getResourceAsStream("/json/getAlbums.json")
-//            val inputStream = javaClass.getResourceAsStream("/json/getAlbums.json")
             val jsonString = inputStream!!.bufferedReader().use { it.readText() }
             val albums = Gson().fromJson(jsonString, Array<Album>::class.java).toList()
             onComplete(albums)
         } catch (e: Exception) {
             onError(e)
         }
+    }
+
+    override fun getAlbum(
+        id: Int,
+        onComplete: (resp: Album?) -> Unit,
+        onError: (error: Exception) -> Unit
+    ) {
+        TODO("Not yet implemented")
     }
 
     private fun loadJsonFromAsset(fileName: String): String {
