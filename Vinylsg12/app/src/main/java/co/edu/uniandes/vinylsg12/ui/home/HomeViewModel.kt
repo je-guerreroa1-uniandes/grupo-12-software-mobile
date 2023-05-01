@@ -17,11 +17,6 @@ class HomeViewModel : ViewModel() {
 
     private val service: AlbumService = RetrofitAlbumService()
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
-    }
-    val text: LiveData<String> = _text
-
     private val _albums = MutableLiveData<List<Album>>()
     val albums: LiveData<List<Album>> = _albums
 
