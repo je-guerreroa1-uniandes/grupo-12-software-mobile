@@ -3,4 +3,7 @@
     <string name="title_home">Albums</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="navigation_drawer_open">Navigation drawer open</string>
+    <string name="navigation_drawer_close">Navigation drawer close</string>
+    <string name="drawer_toggle_description">Menu toggle</string>
 </resources>

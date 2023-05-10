@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_my_albums"
+        android:title="My Albums"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_create_album"
+        android:title="Create album"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_about_us"
+        android:title="About us"
+        app:showAsAction="never" />
+</menu>
