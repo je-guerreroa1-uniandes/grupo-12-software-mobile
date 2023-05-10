@@ -9,6 +9,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -22,6 +23,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private lateinit var binding: ActivityMainBinding
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var toggle: ActionBarDrawerToggle
+    private val destinationChangedListener =
+        NavController.OnDestinationChangedListener { _, _, _ ->
+            toggle.syncState()
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,15 +37,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         val navView: BottomNavigationView = binding.navView
         drawerLayout = binding.drawerLayout
-//        toggle = ActionBarDrawerToggle(
-//            this,
-//            drawerLayout,
-//            binding.toolbar,
-//            R.string.navigation_drawer_open,
-//            R.string.navigation_drawer_close
-//        )
-//        drawerLayout.addDrawerListener(toggle)
-//        toggle.syncState()
 
         val navMenuView = binding.navMenuView
 
@@ -57,24 +53,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         navMenuView.setNavigationItemSelectedListener(this)
 
-//        val drawerToggle = ActionBarDrawerToggle(
-//            this,
-//            binding.drawerLayout,
-//            binding.toolbar,
-//            R.string.navigation_drawer_open,
-//            R.string.navigation_drawer_close
-//        )
-//
-//        binding.drawerToggle.setOnClickListener {
-//            if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
-//                binding.drawerLayout.closeDrawer(GravityCompat.START)
-//            } else {
-//                binding.drawerLayout.openDrawer(GravityCompat.START)
-//            }
-//        }
-//
-//        binding.drawerLayout.addDrawerListener(drawerToggle)
-//        drawerToggle.syncState()
        toggle = ActionBarDrawerToggle(
             this,
             drawerLayout,
@@ -84,6 +62,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         )
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
+
+        navController.addOnDestinationChangedListener(destinationChangedListener)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+        navController.removeOnDestinationChangedListener(destinationChangedListener)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
