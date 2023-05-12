@@ -6,7 +6,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import co.edu.uniandes.vinylsg12.common.api.interfaces.AlbumService
-import co.edu.uniandes.vinylsg12.common.api.mock.MockAlbumService
 import co.edu.uniandes.vinylsg12.common.api.models.Album
 import co.edu.uniandes.vinylsg12.common.api.services.RetrofitAlbumService
 import kotlinx.coroutines.Dispatchers
@@ -24,7 +23,7 @@ class HomeViewModel : ViewModel() {
         viewModelScope.launch {
             try {
                 val albums = withContext(Dispatchers.IO) {
-                    service.getAlbums(
+                    service.albums(
                         onComplete = { albums ->
                             _albums.postValue(albums)
                         },

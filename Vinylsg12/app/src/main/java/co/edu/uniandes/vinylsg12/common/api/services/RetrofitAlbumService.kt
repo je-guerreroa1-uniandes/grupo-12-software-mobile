@@ -24,7 +24,7 @@ class RetrofitAlbumService : AlbumService {
         api = retrofit.create(AlbumApi::class.java)
     }
 
-    override fun getAlbums(
+    override fun albums(
         onComplete: (resp: List<Album>) -> Unit,
         onError: (error: Exception) -> Unit
     ) {
@@ -45,7 +45,7 @@ class RetrofitAlbumService : AlbumService {
         })
     }
 
-    override fun getAlbum(
+    override fun album(
         id: Int,
         onComplete: (resp: Album?) -> Unit,
         onError: (error: Exception) -> Unit
