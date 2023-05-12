@@ -162,4 +162,22 @@ class MockAlbumService : AlbumService {
             onError(e)
         }
     }
+
+    override fun create(
+        name: String,
+        cover: String,
+        releaseDate: String,
+        description: String,
+        genre: String,
+        recordLabel: String,
+        onComplete: (resp: Album?) -> Unit,
+        onError: (error: Exception) -> Unit
+    ) {
+        try {
+            val album = Album(name = name, cover = cover, releaseDate = releaseDate, description = description, genre = genre, recordLabel = recordLabel)
+            onComplete(album)
+        } catch (e: Exception) {
+            onError(e)
+        }
+    }
 }

@@ -3,6 +3,7 @@ package co.edu.uniandes.vinylsg12.common.api.services
 import co.edu.uniandes.vinylsg12.common.api.interfaces.CollectorService
 import co.edu.uniandes.vinylsg12.common.api.models.Album
 import co.edu.uniandes.vinylsg12.common.api.models.Collector
+import co.edu.uniandes.vinylsg12.common.constants.BASE_URL
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -19,7 +20,7 @@ class RetrofitCollectorService: CollectorService {
 
     init {
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://vynils-back-heroku.herokuapp.com/")
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         api = retrofit.create(CollectorApi::class.java)

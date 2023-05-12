@@ -2,12 +2,15 @@ package co.edu.uniandes.vinylsg12.common.api.services
 
 import co.edu.uniandes.vinylsg12.common.api.interfaces.AlbumService
 import co.edu.uniandes.vinylsg12.common.api.models.Album
+import co.edu.uniandes.vinylsg12.common.constants.BASE_URL
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Path
 
 
@@ -17,7 +20,7 @@ class RetrofitAlbumService : AlbumService {
 
     init {
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://vynils-back-heroku.herokuapp.com/")
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -67,6 +70,34 @@ class RetrofitAlbumService : AlbumService {
         })
     }
 
+    override fun create(
+        name: String,
+        cover: String,
+        releaseDate: String,
+        description: String,
+        genre: String,
+        recordLabel: String,
+        onComplete: (resp: Album?) -> Unit,
+        onError: (error: Exception) -> Unit
+    ) {
+        val album = Album(name = name, cover = cover, releaseDate = releaseDate, description = description, genre = genre, recordLabel = recordLabel)
+        val call = api.create(album)
+        call.enqueue(object : Callback<Album?> {
+            override fun onResponse(call: Call<Album?>, response: Response<Album?>) {
+                if (response.isSuccessful) {
+                    val savedCollector = response.body()
+                    onComplete(savedCollector)
+                } else {
+                    onError(Exception("Request failed with HTTP ${response.code()}"))
+                }
+            }
+
+            override fun onFailure(call: Call<Album?>, t: Throwable) {
+                onError(Exception("Request failed: ${t.message}"))
+            }
+        })
+    }
+
     interface AlbumApi {
         @GET("albums")
         fun getAlbums(): Call<List<Album>>
@@ -74,5 +105,7 @@ class RetrofitAlbumService : AlbumService {
         @GET("albums/{id}")
         fun getAlbum(@Path("id") albumId: Int): Call<Album?>
 
+        @POST("albums")
+        fun create(@Body album: Album): Call<Album?>
     }
 }

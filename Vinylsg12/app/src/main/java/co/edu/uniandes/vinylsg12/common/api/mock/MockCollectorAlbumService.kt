@@ -67,9 +67,11 @@ class MockCollectorAlbumService: CollectorAlbumService {
         }
     }
 
-    override fun saveAlbum(
+    override fun add(
         albumId: Int,
         collectorId: Int,
+        price: Int,
+        status: String,
         onComplete: (resp: CollectedAlbum?) -> Unit,
         onError: (error: Exception) -> Unit
     ) {

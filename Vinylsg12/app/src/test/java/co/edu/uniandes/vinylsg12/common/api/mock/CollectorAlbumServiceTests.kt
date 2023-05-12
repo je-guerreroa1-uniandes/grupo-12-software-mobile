@@ -18,7 +18,8 @@ class CollectorAlbumServiceTests {
     fun collectorAlbums_AreNotEmpty() {
         Assert.assertNotNull(sut)
         val safeSut = requireNotNull(sut) { Assert.fail("sut cannot be null") }
-        safeSut.albums(100,
+        safeSut.albums(
+            100,
             onComplete = { albums ->
                 Assert.assertFalse(albums.isEmpty())
             },
@@ -31,7 +32,7 @@ class CollectorAlbumServiceTests {
     @Test
     fun collectorAlbum_isNotEmpty() {
         val safeSut = requireNotNull(sut) { Assert.fail("sut cannot be null") }
-        safeSut.saveAlbum(1, 100,
+        safeSut.add(1, 100, 1000, "Active",
             onComplete = { album ->
                 Assert.assertNotNull(album)
             },
