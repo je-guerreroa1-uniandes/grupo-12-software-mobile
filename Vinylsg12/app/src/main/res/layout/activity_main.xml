@@ -6,4 +6,92 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="TODO"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_photo" />
+
+    <include
+        layout="@layout/merge_logo_vinyls"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/tv_vinyl"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_marginBottom="280dp"
+        android:background="#E6D8620D"
+        android:fontFamily="@font/averia_libre_regular"
+        android:gravity="start"
+        android:paddingStart="40dp"
+        android:text="@string/tv_vinyl"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="RtlSymmetry" />
+
+    <TextView
+        android:id="@+id/tv_collections"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="#D8D8620D"
+        android:fontFamily="@font/averia_libre_regular"
+        android:gravity="start"
+        android:paddingStart="40dp"
+        android:text="@string/tv_collections"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_vinyl"
+        tools:ignore="RtlSymmetry" />
+
+    <Button
+        android:id="@+id/btn_just_visit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="86dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/averia_libre_regular"
+        android:text="@string/just_visit"
+        android:textColor="@color/primary_color"
+        android:textSize="20sp"
+        android:textStyle="normal|bold"
+        android:textAllCaps="false"
+        android:onClick="openGuestHome"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:fontFamily="@font/averia_libre_regular"
+        android:textSize="20sp"
+        android:text="@string/btn_login"
+        android:textColor="@color/primary_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_signup"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_signup"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/primary_color"
+        android:fontFamily="@font/averia_libre_regular"
+        android:textSize="20sp"
+        android:text="@string/btn_signup"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_login" />
 </androidx.constraintlayout.widget.ConstraintLayout>

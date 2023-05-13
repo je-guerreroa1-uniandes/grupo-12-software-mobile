@@ -4,4 +4,8 @@
         <item name="android:fontFamily">@font/averia_libre_regular</item>
         <item name="windowActionBar">false</item>
     </style>
+    <style name="Theme.VinylsG12.NoActionBar" parent="Theme.VinylsG12">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 </resources>
