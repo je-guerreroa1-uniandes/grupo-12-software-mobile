@@ -1,4 +1,4 @@
-package co.edu.uniandes.vinylsg12.ui.home
+package co.edu.uniandes.vinylsg12.ui.albums
 
 import android.animation.ObjectAnimator
 import android.content.Context
@@ -7,18 +7,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import co.edu.uniandes.vinylsg12.databinding.FragmentHomeBinding
+import co.edu.uniandes.vinylsg12.databinding.FragmentAlbumsBinding
 import co.edu.uniandes.vinylsg12.ui.album.AlbumActivity
-import co.edu.uniandes.vinylsg12.ui.home.adapters.AlbumAdapter
+import co.edu.uniandes.vinylsg12.ui.albums.adapters.AlbumAdapter
 
 class HomeFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentAlbumsBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -29,7 +28,7 @@ class HomeFragment : Fragment() {
         val homeViewModel =
             ViewModelProvider(this).get(HomeViewModel::class.java)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentAlbumsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         subscribeToVariables(homeViewModel)
