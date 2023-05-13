@@ -78,6 +78,7 @@
         android:textSize="20sp"
         android:text="@string/btn_login"
         android:textColor="@color/primary_color"
+        android:onClick="openLogin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_signup"
         app:layout_constraintStart_toStartOf="parent" />
@@ -87,10 +88,12 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:background="@color/primary_color"
+        android:enabled="false"
+        android:visibility="invisible"
         android:fontFamily="@font/averia_libre_regular"
-        android:textSize="20sp"
         android:text="@string/btn_signup"
         android:textColor="@color/white"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btn_login" />
