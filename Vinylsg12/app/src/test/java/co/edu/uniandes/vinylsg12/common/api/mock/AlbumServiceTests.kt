@@ -6,7 +6,7 @@ import org.junit.Before
 import org.junit.Test
 
 class AlbumServiceTests {
-    var sut: AlbumService? = null
+    private var sut: AlbumService? = null
 
     @Before
     fun setUp() {
@@ -19,7 +19,7 @@ class AlbumServiceTests {
     }
 
     @Test
-    fun getAlbums_isNotEmpty() {
+    fun albums_AreNotEmpty() {
         assertNotNull(sut)
         val safeSut = requireNotNull(sut) { fail("sut cannot be null") }
         safeSut.albums(
