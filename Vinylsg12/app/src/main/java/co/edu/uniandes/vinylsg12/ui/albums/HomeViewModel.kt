@@ -1,4 +1,4 @@
-package co.edu.uniandes.vinylsg12.ui.home
+package co.edu.uniandes.vinylsg12.ui.albums
 
 import android.util.Log
 import androidx.lifecycle.LiveData

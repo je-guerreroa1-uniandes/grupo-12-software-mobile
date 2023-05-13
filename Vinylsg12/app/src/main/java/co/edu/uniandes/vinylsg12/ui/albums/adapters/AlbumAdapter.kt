@@ -1,4 +1,4 @@
-package co.edu.uniandes.vinylsg12.ui.home.adapters
+package co.edu.uniandes.vinylsg12.ui.albums.adapters
 
 import android.content.Intent
 import androidx.recyclerview.widget.RecyclerView
