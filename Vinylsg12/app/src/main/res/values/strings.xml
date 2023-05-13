@@ -8,10 +8,17 @@
 
     <string name="btn_login">Log In</string>
     <string name="btn_signup">Sign Up</string>
+    <string name="btn_create_album">Create Album</string>
     <string name="tv_vinyl">Vinyl</string>
     <string name="tv_collections">Collections</string>
     <string name="just_visit">Just visit collections</string>
     <string name="hint_username">Username</string>
     <string name="hint_password">Password</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_cover_url">Cover url</string>
+    <string name="hint_release_date">Release date</string>
+    <string name="hint_description">Description</string>
+    <string name="hint_genre">Genre</string>
+    <string name="hint_record_label">Record label</string>
     <string name="title_activity_prueba">PruebaActivity</string>
 </resources>
