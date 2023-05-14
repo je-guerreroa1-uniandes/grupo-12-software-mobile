@@ -22,6 +22,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private lateinit var binding: ActivityHomeBinding
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var toggle: ActionBarDrawerToggle
+    private lateinit var navController: NavController
     private val destinationChangedListener =
         NavController.OnDestinationChangedListener { _, _, _ ->
             toggle.syncState()
@@ -39,7 +40,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         val navMenuView = binding.navMenuView
 
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+        navController = findNavController(R.id.nav_host_fragment_activity_main)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
@@ -65,9 +66,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navController.addOnDestinationChangedListener(destinationChangedListener)
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+    override fun onPause() {
+        super.onPause()
         navController.removeOnDestinationChangedListener(destinationChangedListener)
     }
 

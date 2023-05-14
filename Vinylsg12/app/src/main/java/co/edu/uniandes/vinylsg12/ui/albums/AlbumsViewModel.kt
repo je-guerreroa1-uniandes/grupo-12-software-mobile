@@ -12,7 +12,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class HomeViewModel : ViewModel() {
+class AlbumsViewModel : ViewModel() {
 
     private val service: AlbumService = RetrofitAlbumService()
 
