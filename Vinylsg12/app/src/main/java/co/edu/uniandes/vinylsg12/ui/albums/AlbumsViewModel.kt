@@ -22,10 +22,10 @@ class AlbumsViewModel : ViewModel() {
     public fun fetchData() {
         viewModelScope.launch {
             try {
-                val albums = withContext(Dispatchers.IO) {
+                withContext(Dispatchers.IO) {
                     service.albums(
-                        onComplete = { albums ->
-                            _albums.postValue(albums)
+                        onComplete = { fetchedAlbums ->
+                            _albums.postValue(fetchedAlbums)
                         },
                         onError = { error ->
                             Log.e("MyTag", "Error fetching albums: ${error.message}", error)
