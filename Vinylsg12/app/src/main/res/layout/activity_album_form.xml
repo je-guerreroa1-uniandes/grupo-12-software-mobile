@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/im_background_vinyl"
     tools:context=".ui.album.AlbumFormActivity">
 
 
@@ -19,53 +20,155 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
+        <TextView
+            android:id="@+id/post_result_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingHorizontal="10dp"
+            android:text="@string/txt_create_album"
+            android:textColor="@color/secondary_text"
+            android:textSize="25sp" />
+
         <EditText
             android:id="@+id/name"
+            style="@style/Theme.EditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            android:text="name" />
+
+            android:layout_marginTop="220dp"
+            android:background="@color/secondary_color"
+            android:drawableStart="@drawable/ic_username"
+            android:hint="@string/hint_name"
+            android:maxLength="40"
+            android:maxLines="1"
+            android:minHeight="48dp"
+            android:paddingHorizontal="10dp"
+            android:singleLine="true"
+            android:textColor="@color/secondary_text"
+            android:textColorHint="@color/secondary_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <EditText
             android:id="@+id/cover"
+            style="@style/Theme.EditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            android:text="cover" />
+
+            android:layout_marginTop="10dp"
+            android:background="@color/secondary_color"
+            android:drawableStart="@drawable/ic_username"
+            android:hint="@string/hint_cover_url"
+            android:maxLength="40"
+            android:maxLines="1"
+            android:minHeight="48dp"
+            android:paddingHorizontal="10dp"
+            android:singleLine="true"
+            android:textColor="@color/secondary_text"
+            android:textColorHint="@color/secondary_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name"/>
 
         <EditText
             android:id="@+id/releaseDate"
+            style="@style/Theme.EditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            android:text="releaseDate" />
+
+            android:layout_marginTop="10dp"
+            android:background="@color/secondary_color"
+            android:drawableStart="@drawable/ic_username"
+            android:hint="@string/hint_release_date"
+            android:maxLength="40"
+            android:maxLines="1"
+            android:minHeight="48dp"
+            android:paddingHorizontal="10dp"
+            android:singleLine="true"
+            android:textColor="@color/secondary_text"
+            android:textColorHint="@color/secondary_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@id/cover"/>
 
         <EditText
             android:id="@+id/description"
+            style="@style/Theme.EditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            android:text="description" />
+
+            android:layout_marginTop="10dp"
+            android:background="@color/secondary_color"
+            android:drawableStart="@drawable/ic_username"
+            android:hint="@string/hint_description"
+            android:maxLength="40"
+            android:maxLines="1"
+            android:minHeight="48dp"
+            android:paddingHorizontal="10dp"
+            android:singleLine="true"
+            android:textColor="@color/secondary_text"
+            android:textColorHint="@color/secondary_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/releaseDate" />
 
         <EditText
             android:id="@+id/genre"
+            style="@style/Theme.EditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            android:text="genre" />
+
+            android:layout_marginTop="10dp"
+            android:background="@color/secondary_color"
+            android:drawableStart="@drawable/ic_username"
+            android:hint="@string/hint_genre"
+            android:maxLength="40"
+            android:maxLines="1"
+            android:minHeight="48dp"
+            android:paddingHorizontal="10dp"
+            android:singleLine="true"
+            android:textColor="@color/secondary_text"
+            android:textColorHint="@color/secondary_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description"/>
 
         <EditText
             android:id="@+id/recordLabel"
+            style="@style/Theme.EditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            android:text="recordLabel" />
+
+            android:layout_marginTop="10dp"
+            android:background="@color/secondary_color"
+            android:drawableStart="@drawable/ic_username"
+            android:hint="@string/hint_record_label"
+            android:maxLength="40"
+            android:maxLines="1"
+            android:minHeight="48dp"
+            android:paddingHorizontal="10dp"
+            android:singleLine="true"
+            android:textColor="@color/secondary_text"
+            android:textColorHint="@color/secondary_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_genre" />
+
 
     </LinearLayout>
 
