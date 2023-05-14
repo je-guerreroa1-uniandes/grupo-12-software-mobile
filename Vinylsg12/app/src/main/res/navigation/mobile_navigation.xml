@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="co.edu.uniandes.vinylsg12.ui.albums.HomeFragment"
+        android:name="co.edu.uniandes.vinylsg12.ui.albums.AlbumsFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_albums" />
 
