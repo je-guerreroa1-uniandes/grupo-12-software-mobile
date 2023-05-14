@@ -3,23 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_albums">
 
     <fragment
-        android:id="@+id/navigation_home"
+        android:id="@+id/navigation_albums"
         android:name="co.edu.uniandes.vinylsg12.ui.albums.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_albums" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_collectors"
         android:name="co.edu.uniandes.vinylsg12.ui.collectors.CollectorsFragment"
-        android:label="@string/title_dashboard"
+        android:label="@string/title_collectors"
         tools:layout="@layout/fragment_collectors" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="co.edu.uniandes.vinylsg12.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_musicians"
+        android:name="co.edu.uniandes.vinylsg12.ui.musicians.MusiciansFragment"
+        android:label="@string/title_musicians"
+        tools:layout="@layout/fragment_musicians" />
+
+    <fragment
+        android:id="@+id/navigation_bands"
+        android:name="co.edu.uniandes.vinylsg12.ui.bands.BandsFragment"
+        android:label="@string/title_bands"
+        tools:layout="@layout/fragment_bands" />
 </navigation>
