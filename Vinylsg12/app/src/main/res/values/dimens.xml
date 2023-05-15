@@ -7,4 +7,8 @@
 
     <dimen name="logo_width">113dp</dimen>
     <dimen name="logo_height">125dp</dimen>
+
+    <dimen name="margin_default">0dp</dimen>
+    <dimen name="padding_default">12dp</dimen>
+    <dimen name="text_size_default">16dp</dimen>
 </resources>

@@ -32,6 +32,7 @@ class AlbumFormViewModel: ViewModel() {
                             onSuccess()
                         },
                         onError = {
+                            Log.e("MyTag", "Error fetching albums: ${it.message}", it)
                             onError(it)
                         }
                     )

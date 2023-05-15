@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="primary_color">#FF5722</color>
+    <color name="secondary_color">#FFFFFFFF</color>
     <color name="dark_primary_color">#E64A19</color>
     <color name="light_primary_color">#FFCCBC</color>
     <color name="text_icon_color">#FFFFFFFF</color>
@@ -15,4 +16,6 @@
     <color name="primary_text">#212121</color>
     <color name="secondary_text">#757575</color>
     <color name="divider_color">#BDBDBD</color>
+    <color name="background_component_90">#5AE55F2C</color>
+    <color name="background_component_60">#3CE55F2C</color>
 </resources>
