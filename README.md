@@ -1,5 +1,9 @@
 # grupo-12-software-mobiles
 
+## Analisis estático y micro optimizaciones
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=je-guerreroa1-uniandes_grupo-12-software-mobile&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=je-guerreroa1-uniandes_grupo-12-software-mobile)
+
 ## Disposición de carpetas
 
 El proyecto se encuentra repartido entre las siguientes carpetas:
