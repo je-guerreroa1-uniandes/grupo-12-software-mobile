@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import co.edu.uniandes.vinylsg12.databinding.FragmentAlbumsBinding
 import co.edu.uniandes.vinylsg12.ui.about_us.AboutActivity
 import co.edu.uniandes.vinylsg12.ui.album.AlbumActivity
+import co.edu.uniandes.vinylsg12.ui.album.AlbumFormActivity
 import co.edu.uniandes.vinylsg12.ui.albums.adapters.AlbumAdapter
 
 class AlbumsFragment : Fragment() {
@@ -65,7 +66,7 @@ class AlbumsFragment : Fragment() {
 
     fun showAddAlbumActivity(view: View) {
         val context = view.context
-        val intent = Intent(context, AboutActivity::class.java)
+        val intent = Intent(context, AlbumFormActivity::class.java)
         context.startActivity(intent)
     }
 
