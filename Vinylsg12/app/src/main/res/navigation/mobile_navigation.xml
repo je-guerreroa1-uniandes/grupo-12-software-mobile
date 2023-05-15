@@ -7,15 +7,15 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="co.edu.uniandes.vinylsg12.ui.albums.AlbumsFragment"
+        android:name="co.edu.uniandes.vinylsg12.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_albums" />
+        tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="co.edu.uniandes.vinylsg12.ui.collectors.CollectorsFragment"
+        android:name="co.edu.uniandes.vinylsg12.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_collectors" />
+        tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_notifications"

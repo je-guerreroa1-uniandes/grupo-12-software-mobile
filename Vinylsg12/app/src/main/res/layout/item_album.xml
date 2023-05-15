@@ -6,7 +6,6 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_margin="0dp"
-        android:theme="@style/Theme.VinylsG12"
         app:cardBackgroundColor="@android:color/transparent"
         app:cardElevation="2dp">
 

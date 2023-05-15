@@ -1,10 +1,10 @@
-package co.edu.uniandes.vinylsg12.ui.collectors
+package co.edu.uniandes.vinylsg12.ui.dashboard
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class CollectorsViewModel : ViewModel() {
+class DashboardViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         value = "This is dashboard Fragment"

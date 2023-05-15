@@ -1,4 +1,4 @@
-package co.edu.uniandes.vinylsg12.ui.albums
+package co.edu.uniandes.vinylsg12.ui.home
 
 import android.animation.ObjectAnimator
 import android.content.Context
@@ -7,19 +7,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import co.edu.uniandes.vinylsg12.databinding.FragmentAlbumsBinding
-import co.edu.uniandes.vinylsg12.ui.about_us.AboutActivity
+import co.edu.uniandes.vinylsg12.databinding.FragmentHomeBinding
 import co.edu.uniandes.vinylsg12.ui.album.AlbumActivity
-import co.edu.uniandes.vinylsg12.ui.album.AlbumFormActivity
-import co.edu.uniandes.vinylsg12.ui.albums.adapters.AlbumAdapter
+import co.edu.uniandes.vinylsg12.ui.home.adapters.AlbumAdapter
 
-class AlbumsFragment : Fragment() {
+class HomeFragment : Fragment() {
 
-    private var _binding: FragmentAlbumsBinding? = null
+    private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -27,26 +26,23 @@ class AlbumsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val albumsViewModel =
-            ViewModelProvider(this).get(AlbumsViewModel::class.java)
+        val homeViewModel =
+            ViewModelProvider(this).get(HomeViewModel::class.java)
 
-        _binding = FragmentAlbumsBinding.inflate(inflater, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        subscribeToVariables(albumsViewModel)
-        albumsViewModel.fetchData()
-        binding.addAlbumButton.setOnClickListener {
-            showAddAlbumActivity(it)
-        }
+        subscribeToVariables(homeViewModel)
+        homeViewModel.fetchData()
         return root
     }
 
-    private fun subscribeToVariables(albumsViewModel: AlbumsViewModel) {
+    private fun subscribeToVariables(homeViewModel: HomeViewModel) {
         val recyclerView: RecyclerView = binding.albumsRecyclerView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         val adapter = AlbumAdapter(listOf())
         recyclerView.adapter = adapter
-        albumsViewModel.albums.observe(viewLifecycleOwner) {
+        homeViewModel.albums.observe(viewLifecycleOwner) {
             adapter.albums = it
             adapter.notifyDataSetChanged()
             binding.progressBar.visibility = View.GONE
@@ -57,26 +53,20 @@ class AlbumsFragment : Fragment() {
         anim.start()
     }
 
-    fun showAlbumActivity(context: Context, albumId: Int) {
+    fun startAlbumActivity(context: Context, albumId: Int) {
         val intent = Intent(context, AlbumActivity::class.java).apply {
             putExtra(AlbumActivity.EXTRA_ALBUM_ID, albumId)
         }
         context.startActivity(intent)
     }
 
-    fun showAddAlbumActivity(view: View) {
-        val context = view.context
-        val intent = Intent(context, AlbumFormActivity::class.java)
-        context.startActivity(intent)
-    }
-
     fun onBindViewHolder(holder: AlbumAdapter.AlbumViewHolder, position: Int) {
-        val albumsViewModel = ViewModelProvider(this).get(AlbumsViewModel::class.java)
-        val album = albumsViewModel.albums.value?.get(position) // get album at specified position
+        val homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+        val album = homeViewModel.albums.value?.get(position) // get album at specified position
         album?.let {
             holder.bind(it)
             holder.itemView.setOnClickListener {
-                showAlbumActivity(requireContext(), it.id)
+                startAlbumActivity(requireContext(), it.id)
             }
         }
     }

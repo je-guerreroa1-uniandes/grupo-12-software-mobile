@@ -6,7 +6,6 @@ import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import co.edu.uniandes.vinylsg12.databinding.ActivityAlbumBinding
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 
 class AlbumActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAlbumBinding
@@ -30,7 +29,6 @@ class AlbumActivity : AppCompatActivity() {
             binding.albumRecordLabel.text = album.recordLabel
             Glide.with(binding.albumImage)
                 .load(album.cover)
-                .transition(DrawableTransitionOptions.withCrossFade(2))
                 .into(binding.albumImage)
         }
 

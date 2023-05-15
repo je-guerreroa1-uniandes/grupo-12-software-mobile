@@ -1,4 +1,4 @@
-package co.edu.uniandes.vinylsg12.ui.albums
+package co.edu.uniandes.vinylsg12.ui.home
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -6,13 +6,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import co.edu.uniandes.vinylsg12.common.api.interfaces.AlbumService
+import co.edu.uniandes.vinylsg12.common.api.mock.MockAlbumService
 import co.edu.uniandes.vinylsg12.common.api.models.Album
 import co.edu.uniandes.vinylsg12.common.api.services.RetrofitAlbumService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class AlbumsViewModel : ViewModel() {
+class HomeViewModel : ViewModel() {
 
     private val service: AlbumService = RetrofitAlbumService()
 
@@ -23,7 +24,7 @@ class AlbumsViewModel : ViewModel() {
         viewModelScope.launch {
             try {
                 val albums = withContext(Dispatchers.IO) {
-                    service.albums(
+                    service.getAlbums(
                         onComplete = { albums ->
                             _albums.postValue(albums)
                         },
