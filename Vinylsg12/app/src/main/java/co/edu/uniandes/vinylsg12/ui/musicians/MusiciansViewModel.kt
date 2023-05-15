@@ -1,32 +1,32 @@
-package co.edu.uniandes.vinylsg12.ui.home
+package co.edu.uniandes.vinylsg12.ui.musicians
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import co.edu.uniandes.vinylsg12.common.api.interfaces.AlbumService
-import co.edu.uniandes.vinylsg12.common.api.mock.MockAlbumService
-import co.edu.uniandes.vinylsg12.common.api.models.Album
-import co.edu.uniandes.vinylsg12.common.api.services.RetrofitAlbumService
+import co.edu.uniandes.vinylsg12.common.api.interfaces.MusicianService
+import co.edu.uniandes.vinylsg12.common.api.models.Musician
+import co.edu.uniandes.vinylsg12.common.api.services.RetrofitMusicianService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.lang.Exception
 
-class HomeViewModel : ViewModel() {
+class MusiciansViewModel : ViewModel() {
 
-    private val service: AlbumService = RetrofitAlbumService()
+    private var service: MusicianService = RetrofitMusicianService()
 
-    private val _albums = MutableLiveData<List<Album>>()
-    val albums: LiveData<List<Album>> = _albums
+    private val _musicians = MutableLiveData<List<Musician>>()
+    val musicians: LiveData<List<Musician>> = _musicians
 
     public fun fetchData() {
         viewModelScope.launch {
             try {
                 withContext(Dispatchers.IO) {
-                    service.albums(
-                        onComplete = { fetchedAlbums ->
-                            _albums.postValue(fetchedAlbums)
+                    service.musicians(
+                        onComplete = { fetchedMusicians ->
+                            _musicians.postValue(fetchedMusicians)
                         },
                         onError = { error ->
                             Log.e("MyTag", "Error fetching albums: ${error.message}", error)
