@@ -28,3 +28,17 @@ El proyecto se encuentra repartido entre las siguientes carpetas:
 ### 1.0.1
 
 * Implementación HU02 - Detalle de album
+
+### 1.1.0
+
+* Damaged release
+
+### 1.2.0
+
+* Implementación HU03 - Listado de artistas, separados en musicos y bandas
+* Implementación HU07 - Crear album
+* Adición de navegación de inicio
+* Aplciación de theme para aplicación
+* Adición de navigation drawer
+* Adición de servicio para coleccionistas
+* Adición de servicio para albums coleccionados
