@@ -8,9 +8,7 @@ import androidx.lifecycle.viewModelScope
 import co.edu.uniandes.vinylsg12.common.api.interfaces.AlbumService
 import co.edu.uniandes.vinylsg12.common.api.models.Album
 import co.edu.uniandes.vinylsg12.common.api.services.RetrofitAlbumService
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class AlbumViewModel: ViewModel() {
 
@@ -29,7 +27,7 @@ class AlbumViewModel: ViewModel() {
     public fun fetchAlbum(albumId: Int) {
         viewModelScope.launch {
             try {
-                service.getAlbum(albumId,
+                service.album(albumId,
                     onComplete = { album ->
                         _album.postValue(album)
                     },
