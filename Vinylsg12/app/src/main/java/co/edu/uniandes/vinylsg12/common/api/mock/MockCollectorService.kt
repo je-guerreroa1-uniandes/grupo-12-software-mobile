@@ -1,7 +1,6 @@
 package co.edu.uniandes.vinylsg12.common.api.mock
 
 import co.edu.uniandes.vinylsg12.common.api.interfaces.CollectorService
-import co.edu.uniandes.vinylsg12.common.api.models.Album
 import co.edu.uniandes.vinylsg12.common.api.models.Collector
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
