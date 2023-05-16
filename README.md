@@ -47,6 +47,8 @@ El proyecto se encuentra repartido entre las siguientes carpetas:
 * Adición de servicio para coleccionistas
 * Adición de servicio para albums coleccionados
 
+### 1.2.1
+
 #### Analisis de aplicación
 
 * Adición de pruebas E2E
