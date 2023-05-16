@@ -46,3 +46,12 @@ El proyecto se encuentra repartido entre las siguientes carpetas:
 * Adición de navigation drawer
 * Adición de servicio para coleccionistas
 * Adición de servicio para albums coleccionados
+
+### 1.2.1
+
+#### Analisis de aplicación
+
+* Adición de pruebas E2E
+* Adición de analisis estático con android lint
+* Adición de analisis estático con Sonarcloud
+* Adición de Firebase crashlytics para validar estado de salud de la aplicación

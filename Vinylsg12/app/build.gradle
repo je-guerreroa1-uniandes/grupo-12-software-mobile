@@ -21,6 +21,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
         }
     }
     compileOptions {
@@ -34,13 +35,42 @@ android {
         viewBinding true
         dataBinding true
     }
+    lint {
+        // Turns off checks for the issue IDs you specify.
+        disable += "TypographyFractions" + "TypographyQuotes"
+        // Turns on checks for the issue IDs you specify. These checks are in
+        // addition to the default lint checks.
+        enable += "RtlHardcoded" + "RtlCompat" + "RtlEnabled"
+        // To enable checks for only a subset of issue IDs and ignore all others,
+        // list the issue IDs with the 'check' property instead. This property overrides
+        // any issue IDs you enable or disable using the properties above.
+        checkOnly += "NewApi" + "InlinedApi"
+        // If set to true, turns off analysis progress reporting by lint.
+        quiet = true
+        // If set to true (default), stops the build if errors are found.
+        abortOnError = false
+        // If set to true, lint only reports errors.
+        ignoreWarnings = true
+        // If set to true, lint also checks all dependencies as part of its analysis.
+        // Recommended for projects consisting of an app with library dependencies.
+        checkDependencies = true
+    }
 }
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.10.0'
+    // Import the Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:32.0.0')
+
+    // When using the BoM, don't specify versions in Firebase dependencies
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
+    // Inside the dependencies block
+    implementation 'com.google.firebase:firebase-crashlytics:18.2.3'
+
+    implementation 'androidx.core:core-ktx:1.10.1'
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
@@ -53,6 +83,9 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.15.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.hamcrest:hamcrest-library:2.2'
+    testImplementation("org.hamcrest:hamcrest:2.2")
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.3.0'
 }

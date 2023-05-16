@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1001964229881",
+    "project_id": "vinyls-g12",
+    "storage_bucket": "vinyls-g12.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1001964229881:android:42cbd781239bcf670c3e28",
+        "android_client_info": {
+          "package_name": "co.edu.uniandes.vinylsg12"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1001964229881-i2t24uv267i8uv5ek3uhokdrkghjbm0q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.edu.uniandes.vinylsg12",
+            "certificate_hash": "0a044c2fb8474ffca5495f0956de6763c46f6b7e"
+          }
+        },
+        {
+          "client_id": "1001964229881-8v6qrpmh036n4rs9giilophgp1vkde2n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDuU10k7apVoLr9L8aQ4go5a_B-pwTfHg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1001964229881-8v6qrpmh036n4rs9giilophgp1vkde2n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
