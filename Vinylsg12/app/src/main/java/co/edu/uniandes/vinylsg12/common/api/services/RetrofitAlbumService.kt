@@ -3,6 +3,10 @@ package co.edu.uniandes.vinylsg12.common.api.services
 import co.edu.uniandes.vinylsg12.common.api.interfaces.AlbumService
 import co.edu.uniandes.vinylsg12.common.api.models.Album
 import co.edu.uniandes.vinylsg12.common.constants.BASE_URL
+import com.google.gson.Gson
+import okhttp3.MediaType
+import okhttp3.RequestBody
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -10,6 +14,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.Headers
 import retrofit2.http.POST
 import retrofit2.http.Path
 
@@ -105,6 +110,7 @@ class RetrofitAlbumService : AlbumService {
         @GET("albums/{id}")
         fun getAlbum(@Path("id") albumId: Int): Call<Album?>
 
+        @Headers("Content-Type: application/json")
         @POST("albums")
         fun create(@Body album: Album): Call<Album?>
     }
