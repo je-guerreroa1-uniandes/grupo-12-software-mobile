@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import co.edu.uniandes.vinylsg12.databinding.ActivityMainBinding
+import co.edu.uniandes.vinylsg12.ui.login.LoginActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
