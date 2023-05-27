@@ -14,6 +14,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import co.edu.uniandes.vinylsg12.databinding.ActivityHomeBinding
 import co.edu.uniandes.vinylsg12.ui.about_us.AboutActivity
+import co.edu.uniandes.vinylsg12.ui.collectors.collected_albums.CollectedAlbumsActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
@@ -77,16 +78,30 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(item?.itemId == R.id.action_about_us) {
-            AboutActivity.start(context = this)
-            return true
+        var handled = false
+
+        when (item.itemId) {
+            R.id.action_my_albums -> {
+                CollectedAlbumsActivity.start(context = this)
+                handled = true
+            }
+            R.id.action_about_us -> {
+                AboutActivity.start(context = this)
+                handled = true
+            }
         }
-        return super.onOptionsItemSelected(item)
+
+        return if (handled) {
+            true
+        } else {
+            super.onOptionsItemSelected(item)
+        }
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         drawerLayout.closeDrawer(GravityCompat.START)
         when(item.itemId) {
+            R.id.action_my_albums -> CollectedAlbumsActivity.start(context=this)
             R.id.action_about_us -> AboutActivity.start(this)
         }
         return true

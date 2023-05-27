@@ -12,7 +12,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import co.edu.uniandes.vinylsg12.databinding.FragmentAlbumsBinding
-import co.edu.uniandes.vinylsg12.ui.about_us.AboutActivity
 import co.edu.uniandes.vinylsg12.ui.album.AlbumActivity
 import co.edu.uniandes.vinylsg12.ui.album.AlbumFormActivity
 import co.edu.uniandes.vinylsg12.ui.albums.adapters.AlbumAdapter
@@ -38,6 +37,7 @@ class AlbumsFragment : Fragment() {
         binding.addAlbumButton.setOnClickListener {
             showAddAlbumActivity(it)
         }
+
         return root
     }
 
@@ -50,6 +50,14 @@ class AlbumsFragment : Fragment() {
             adapter.albums = it
             adapter.notifyDataSetChanged()
             binding.progressBar.visibility = View.GONE
+        }
+
+        albumsViewModel.isLogged.observe(viewLifecycleOwner) {
+            if (it) {
+                binding.addAlbumButton.visibility = View.VISIBLE // Show the button
+            } else {
+                binding.addAlbumButton.visibility = View.GONE // Hide the button
+            }
         }
         binding.progressBar.visibility = View.VISIBLE
         val anim = ObjectAnimator.ofInt(binding.progressBar, "progress", 0, 100)
