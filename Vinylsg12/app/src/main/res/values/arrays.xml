@@ -6,4 +6,12 @@
             <item>Rock</item>
             <item>Folk</item>
         </string-array>
+
+        <string-array name="record_labels">
+            <item>Sony Music</item>
+            <item>EMI</item>
+            <item>Discos Fuentes</item>
+            <item>Elektra</item>
+            <item>Fania Records</item>
+        </string-array>
 </resources>

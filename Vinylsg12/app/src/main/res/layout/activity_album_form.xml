@@ -63,8 +63,7 @@
                 android:textColor="@color/secondary_text"
                 android:textColorHint="@color/secondary_text"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/releaseDate" />
+                app:layout_constraintStart_toStartOf="parent"/>
 
             <EditText
                 android:id="@+id/cover"
@@ -85,66 +84,38 @@
                 android:textColor="@color/secondary_text"
                 android:textColorHint="@color/secondary_text"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/name" />
+                app:layout_constraintStart_toStartOf="parent"/>
 
-            <EditText
-                android:id="@+id/releaseDate"
-                style="@style/Theme.EditTextStyle"
+            <DatePicker
+                android:id="@+id/releaseDatePicker"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@color/secondary_color"
-
-                android:drawableStart="@android:drawable/ic_menu_my_calendar"
-                android:ems="10"
-                android:hint="@string/hint_release_date"
-                android:inputType="text"
-                android:maxLength="40"
-                android:maxLines="1"
-                android:minHeight="48dp"
-                android:paddingHorizontal="10dp"
-                android:singleLine="true"
-                android:textColor="@color/secondary_text"
-                android:textColorHint="@color/secondary_text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-
-                app:layout_constraintTop_toBottomOf="@id/cover" />
+                android:layout_height="wrap_content" />
 
             <Spinner
                 android:id="@+id/genre_spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
                 android:background="@color/white"
                 android:drawableStart="@drawable/ic_genre"
                 android:drawablePadding="8dp"
-                android:gravity="center_vertical"/>
+                android:gravity="center_vertical"
+                android:minHeight="48dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp" />
 
-            <EditText
-                android:id="@+id/recordLabel"
-                style="@style/Theme.EditTextStyle"
+            <Spinner
+                android:id="@+id/recordLabel_spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="@color/secondary_color"
-
-                android:drawableStart="@drawable/ic_record"
-                android:ems="10"
-                android:hint="@string/hint_record_label"
-                android:inputType="text"
-                android:maxLength="40"
-                android:maxLines="1"
+                android:background="@color/white"
+                android:drawableStart="@drawable/ic_genre"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
                 android:minHeight="48dp"
-                android:paddingHorizontal="10dp"
-                android:singleLine="true"
-                android:textColor="@color/secondary_text"
-                android:textColorHint="@color/secondary_text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp" />
 
         </LinearLayout>
     </ScrollView>

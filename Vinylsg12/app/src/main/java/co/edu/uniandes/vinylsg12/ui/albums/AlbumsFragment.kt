@@ -14,10 +14,12 @@ import androidx.recyclerview.widget.RecyclerView
 import co.edu.uniandes.vinylsg12.databinding.FragmentAlbumsBinding
 import co.edu.uniandes.vinylsg12.ui.album.AlbumActivity
 import co.edu.uniandes.vinylsg12.ui.album.AlbumFormActivity
+import co.edu.uniandes.vinylsg12.ui.album.AlbumFormViewModel
 import co.edu.uniandes.vinylsg12.ui.albums.adapters.AlbumAdapter
 
 class AlbumsFragment : Fragment() {
 
+    private lateinit var viewModel: AlbumsViewModel
     private var _binding: FragmentAlbumsBinding? = null
     private val binding get() = _binding!!
 
@@ -26,19 +28,24 @@ class AlbumsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val albumsViewModel =
+        viewModel =
             ViewModelProvider(this).get(AlbumsViewModel::class.java)
 
         _binding = FragmentAlbumsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        subscribeToVariables(albumsViewModel)
-        albumsViewModel.fetchData()
+        subscribeToVariables(viewModel)
+        viewModel.fetchData()
         binding.addAlbumButton.setOnClickListener {
             showAddAlbumActivity(it)
         }
 
         return root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.fetchData()
     }
 
     private fun subscribeToVariables(albumsViewModel: AlbumsViewModel) {
