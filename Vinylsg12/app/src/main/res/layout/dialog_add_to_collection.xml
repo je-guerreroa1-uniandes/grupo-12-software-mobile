@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/price"
+        style="@style/Theme.EditTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/secondary_color"
+
+        android:drawableStart="@drawable/ic_price"
+        android:ems="10"
+        android:hint="@string/hint_collected_album_price"
+        android:inputType="number|numberDecimal"
+        android:maxLength="40"
+        android:maxLines="1"
+        android:minHeight="48dp"
+        android:paddingHorizontal="10dp"
+        android:singleLine="true"
+        android:textColor="@color/secondary_text"
+        android:textColorHint="@color/secondary_text" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Album"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/spinnerAlbum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp" />
+</LinearLayout>
+</layout>
