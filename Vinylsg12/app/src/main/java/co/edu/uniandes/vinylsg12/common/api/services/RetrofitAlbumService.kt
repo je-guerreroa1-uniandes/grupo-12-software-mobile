@@ -85,7 +85,14 @@ class RetrofitAlbumService : AlbumService {
         onComplete: (resp: Album?) -> Unit,
         onError: (error: Exception) -> Unit
     ) {
-        val album = Album(name = name, cover = cover, releaseDate = releaseDate, description = description, genre = genre, recordLabel = recordLabel)
+        val album = Album(
+            name = name,
+            cover = cover,
+            releaseDate = releaseDate,
+            description = description,
+            genre = genre,
+            recordLabel = recordLabel
+        ).copy(id = null)
         val call = api.create(album)
         call.enqueue(object : Callback<Album?> {
             override fun onResponse(call: Call<Album?>, response: Response<Album?>) {
@@ -93,7 +100,14 @@ class RetrofitAlbumService : AlbumService {
                     val savedCollector = response.body()
                     onComplete(savedCollector)
                 } else {
-                    onError(Exception("Request failed with HTTP ${response.code()}"))
+                    val errorResponse = response.errorBody()?.string()
+                    val errorMessage = try {
+                        val json = JSONObject(errorResponse)
+                        json.getString("message")
+                    } catch (e: Exception) {
+                        "Request failed with HTTP ${response.code()}"
+                    }
+                    onError(Exception(errorMessage))
                 }
             }
 
