@@ -25,17 +25,25 @@ El proyecto se encuentra repartido entre las siguientes carpetas:
 
 ## Control de cambios
 
-### 1.0.0
+### 1.2.2
 
-* Implementación HU01 - Listado de albums
+#### Fix crear album
 
-### 1.0.1
+* Adición de date picker
+* Adición de spinner para record label
 
-* Implementación HU02 - Detalle de album
+#### Adición de listado de albums de coleccionista
 
-### 1.1.0
+* Adición de listado de albums de coleccionista
 
-* Damaged release
+### 1.2.1
+
+#### Analisis de aplicación
+
+* Adición de pruebas E2E
+* Adición de analisis estático con android lint
+* Adición de analisis estático con Sonarcloud
+* Adición de Firebase crashlytics para validar estado de salud de la aplicación
 
 ### 1.2.0
 
@@ -47,11 +55,14 @@ El proyecto se encuentra repartido entre las siguientes carpetas:
 * Adición de servicio para coleccionistas
 * Adición de servicio para albums coleccionados
 
-### 1.2.1
+### 1.0.1
 
-#### Analisis de aplicación
+* Implementación HU02 - Detalle de album
 
-* Adición de pruebas E2E
-* Adición de analisis estático con android lint
-* Adición de analisis estático con Sonarcloud
-* Adición de Firebase crashlytics para validar estado de salud de la aplicación
+### 1.1.0
+
+* Damaged release
+
+### 1.0.0
+
+* Implementación HU01 - Listado de albums
