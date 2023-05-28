@@ -46,7 +46,7 @@ class HU07AlbumCreateTest {
 
         val appCompatEditText = onView(
             allOf(
-                withId(R.id.editTextText), withText("100"),
+                withId(R.id.collectorId), withText("100"),
                 childAtPosition(
                     childAtPosition(
                         withId(android.R.id.content),
@@ -61,7 +61,7 @@ class HU07AlbumCreateTest {
 
         val appCompatEditText2 = onView(
             allOf(
-                withId(R.id.editTextText), withText("100"),
+                withId(R.id.collectorId), withText("100"),
                 childAtPosition(
                     childAtPosition(
                         withId(android.R.id.content),
@@ -76,7 +76,7 @@ class HU07AlbumCreateTest {
 
         val appCompatEditText3 = onView(
             allOf(
-                withId(R.id.editTextText), withText("100"),
+                withId(R.id.collectorId), withText("100"),
                 childAtPosition(
                     childAtPosition(
                         withId(android.R.id.content),

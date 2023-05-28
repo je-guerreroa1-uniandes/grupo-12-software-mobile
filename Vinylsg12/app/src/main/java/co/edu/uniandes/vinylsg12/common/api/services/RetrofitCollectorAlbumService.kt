@@ -76,10 +76,10 @@ class RetrofitCollectorAlbumService: CollectorAlbumService {
     }
 
     interface CollectorAlbumApi {
-        @GET("collector/{id}/albums")
+        @GET("collectors/{id}/albums")
         fun albums(@Path("id") collectorId: Int): Call<List<CollectedAlbum>>
 
-        @POST("collectors/{collectorId}}/albums/{albumId}")
+        @POST("collectors/{collectorId}/albums/{albumId}")
         fun add(@Path("collectorId") collectorId: Int, @Path("albumId") albumId: Int, @Body collectedAlbum: CollectedAlbum): Call<CollectedAlbum?>
     }
 }
