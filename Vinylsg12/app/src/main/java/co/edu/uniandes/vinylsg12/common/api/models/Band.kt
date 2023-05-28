@@ -7,6 +7,6 @@ data class Band(
     val description: String,
     val creationDate: String,
 //    val albums: Array<Album> = emptyArray<Album>()
-//    val musicians: Array<Musicians>
+    val musicians: List<Musician> = emptyList()
 //    val performerPrizes: Array<Prize>
 )
