@@ -32,13 +32,13 @@ class AlbumFormViewModel: ViewModel() {
                             onSuccess()
                         },
                         onError = {
-                            Log.e("MyTag", "Error fetching albums: ${it.message}", it)
+                            Log.e("MyTag", "Error saving album: ${it.message}", it)
                             onError(it)
                         }
                     )
                 }
             } catch (e: Exception) {
-                Log.e("MyTag", "Error fetching albums: ${e.message}", e)
+                Log.e("MyTag", "Error saving album: ${e.message}", e)
             }
         }
 
