@@ -4,6 +4,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.viewModelFactory
 import co.edu.uniandes.vinylsg12.common.api.interfaces.BandService
 import co.edu.uniandes.vinylsg12.common.api.models.Band
+import co.edu.uniandes.vinylsg12.common.api.models.CollectedAlbum
 import co.edu.uniandes.vinylsg12.common.api.models.Musician
 import co.edu.uniandes.vinylsg12.common.constants.BASE_URL
 import retrofit2.Call
@@ -71,6 +72,33 @@ class RetrofitBandService: BandService {
         })
     }
 
+    override fun add(
+        musicianId: Int,
+        bandId: Int,
+        onComplete: (resp: Musician?) -> Unit,
+        onError: (error: Exception) -> Unit
+    ) {
+        val call = api.add(
+            bandId = bandId,
+            musicianId = musicianId
+        )
+
+        call.enqueue(object : Callback<Musician?> {
+            override fun onResponse(call: Call<Musician?>, response: Response<Musician?>) {
+                if (response.isSuccessful) {
+                    val savedMusician = response.body()
+                    onComplete(savedMusician)
+                } else {
+                    onError(Exception("Request failed with HTTP ${response.code()}"))
+                }
+            }
+
+            override fun onFailure(call: Call<Musician?>, t: Throwable) {
+                onError(Exception("Request failed: ${t.message}"))
+            }
+        })
+    }
+
     interface BandApi {
         @GET("bands")
         fun bands(): Call<List<Band>>
@@ -79,6 +107,6 @@ class RetrofitBandService: BandService {
         fun band(@Path("id") bandId: Int): Call<Band?>
 
         @POST("bands/{bandId}/musicians/{musicianId}")
-        fun add(@Path("bandId") bandId: Int, @Path("musicianId") musicianId: Int, @Body musician: Musician): Call<Musician>
+        fun add(@Path("bandId") bandId: Int, @Path("musicianId") musicianId: Int): Call<Musician?>
     }
 }

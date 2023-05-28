@@ -5,7 +5,8 @@ data class Musician(
     val name: String,
     val image: String,
     val description: String,
-    val birthDate: String
+    val birthDate: String,
+    val band: Band? = null
 //    val albums: Array<Album> = emptyArray<Album>(),
 //    val performerPrizes: String
 )
