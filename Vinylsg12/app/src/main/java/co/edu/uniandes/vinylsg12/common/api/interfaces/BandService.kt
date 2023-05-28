@@ -4,4 +4,5 @@ import co.edu.uniandes.vinylsg12.common.api.models.Band
 
 interface BandService {
     fun bands(onComplete: (resp: List<Band>)->Unit, onError: (error: Exception)->Unit)
+    fun band(id: Int, onComplete: (resp: Band?) -> Unit, onError: (error: Exception) -> Unit)
 }

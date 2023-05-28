@@ -44,6 +44,19 @@ class MockBandService: BandService {
         ]
     """.trimIndent()
 
+    private val bandJson = """
+        {
+            "id": 1,
+            "name": "Queen",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Queen_logo.svg",
+            "description": "Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.",
+            "creationDate": "1970-01-01T05:00:00.000Z",
+            "albums": [],
+            "musicians": [],
+            "performerPrizes": []
+        }
+    """.trimIndent()
+
     override fun bands(
         onComplete: (resp: List<Band>) -> Unit,
         onError: (error: Exception) -> Unit
@@ -51,6 +64,19 @@ class MockBandService: BandService {
         try {
             val bands = Gson().fromJson(bandsJson, Array<Band>::class.java).toList()
             onComplete(bands)
+        } catch (error: java.lang.Exception) {
+            onError(error)
+        }
+    }
+
+    override fun band(
+        id: Int,
+        onComplete: (resp: Band?) -> Unit,
+        onError: (error: Exception) -> Unit
+    ) {
+        try {
+            val band = Gson().fromJson(bandJson, Band::class.java)
+            onComplete(band)
         } catch (error: java.lang.Exception) {
             onError(error)
         }
