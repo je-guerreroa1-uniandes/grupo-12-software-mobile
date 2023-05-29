@@ -79,13 +79,10 @@ class AlbumFormActivity : AppCompatActivity() {
                 selectedGenre,
                 selectedRecordLabel,
                 onSuccess = {
-                    // TODO: To be implemented
                     Toast.makeText(this, "Album created", Toast.LENGTH_SHORT).show()// TODO: incomplete form
-                    // TODO: genre selector {"statusCode":400,"message":"ValidationError: \"genre\" must be one of [Classical, Salsa, Rock, Folk]"}
                     finish()
                 },
                 onError = {
-                    // TODO: Error -> To be implemented
                     Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()// TODO: incomplete form
                 }
             )

@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView
 import co.edu.uniandes.vinylsg12.databinding.FragmentAlbumsBinding
 import co.edu.uniandes.vinylsg12.ui.album.AlbumActivity
 import co.edu.uniandes.vinylsg12.ui.album.AlbumFormActivity
-import co.edu.uniandes.vinylsg12.ui.album.AlbumFormViewModel
 import co.edu.uniandes.vinylsg12.ui.albums.adapters.AlbumAdapter
 
 class AlbumsFragment : Fragment() {

@@ -24,7 +24,7 @@ class AlbumViewModel: ViewModel() {
     }
     val album: LiveData<Album?> = _album
 
-    public fun fetchAlbum(albumId: Int) {
+    fun fetchAlbum(albumId: Int) {
         viewModelScope.launch {
             try {
                 service.album(albumId,

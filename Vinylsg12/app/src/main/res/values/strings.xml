@@ -26,4 +26,6 @@
     <string name="txt_create_album">Clic en el botón para crear un album</string>
     <string name="btn_create_album">Create Album</string>
     <string name="title_activity_collected_albums">Collector\'s Album</string>
+    <string name="hint_collected_album_price">Price</string>
+    <string name="title_activity_band">BandActivity</string>
 </resources>

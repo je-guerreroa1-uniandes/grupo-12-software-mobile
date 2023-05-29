@@ -2,6 +2,7 @@ package co.edu.uniandes.vinylsg12.common.api.mock
 
 import co.edu.uniandes.vinylsg12.common.api.interfaces.BandService
 import co.edu.uniandes.vinylsg12.common.api.models.Band
+import co.edu.uniandes.vinylsg12.common.api.models.Musician
 import com.google.gson.Gson
 
 class MockBandService: BandService {
@@ -44,6 +45,36 @@ class MockBandService: BandService {
         ]
     """.trimIndent()
 
+    private val bandJson = """
+        {
+            "id": 1,
+            "name": "Queen",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Queen_logo.svg",
+            "description": "Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.",
+            "creationDate": "1970-01-01T05:00:00.000Z",
+            "albums": [],
+            "musicians": [],
+            "performerPrizes": []
+        }
+    """.trimIndent()
+
+    private val savedMusicianJson = """
+         {
+            "id": 9,
+            "name": "Freddie Mercury",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Freddie_Mercury_performing_in_New_Haven%2C_CT%2C_November_1977.jpg",
+            "description": "Fue un cantante, compositor, pianista, diseñador gráfico y músico británico de origen parsi e indio​ conocido por haber sido el vocalista principal de la banda de rock Queen.",
+            "birthDate": "1946-09-05T05:00:00.000Z",
+            "band": {
+                "id": 8,
+                "name": "Queen",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Queen_logo.svg",
+                "description": "Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.",
+                "creationDate": "1970-01-01T05:00:00.000Z"
+            }
+        }
+    """.trimIndent()
+
     override fun bands(
         onComplete: (resp: List<Band>) -> Unit,
         onError: (error: Exception) -> Unit
@@ -51,6 +82,33 @@ class MockBandService: BandService {
         try {
             val bands = Gson().fromJson(bandsJson, Array<Band>::class.java).toList()
             onComplete(bands)
+        } catch (error: java.lang.Exception) {
+            onError(error)
+        }
+    }
+
+    override fun band(
+        id: Int,
+        onComplete: (resp: Band?) -> Unit,
+        onError: (error: Exception) -> Unit
+    ) {
+        try {
+            val band = Gson().fromJson(bandJson, Band::class.java)
+            onComplete(band)
+        } catch (error: java.lang.Exception) {
+            onError(error)
+        }
+    }
+
+    override fun add(
+        musicianId: Int,
+        bandId: Int,
+        onComplete: (resp: Musician?) -> Unit,
+        onError: (error: Exception) -> Unit
+    ) {
+        try {
+            val musician = Gson().fromJson(bandJson, Musician::class.java)
+            onComplete(musician)
         } catch (error: java.lang.Exception) {
             onError(error)
         }
