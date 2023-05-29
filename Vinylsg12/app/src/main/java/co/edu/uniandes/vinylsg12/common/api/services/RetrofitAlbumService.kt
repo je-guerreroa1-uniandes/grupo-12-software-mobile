@@ -3,9 +3,6 @@ package co.edu.uniandes.vinylsg12.common.api.services
 import co.edu.uniandes.vinylsg12.common.api.interfaces.AlbumService
 import co.edu.uniandes.vinylsg12.common.api.models.Album
 import co.edu.uniandes.vinylsg12.common.constants.BASE_URL
-import com.google.gson.Gson
-import okhttp3.MediaType
-import okhttp3.RequestBody
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
