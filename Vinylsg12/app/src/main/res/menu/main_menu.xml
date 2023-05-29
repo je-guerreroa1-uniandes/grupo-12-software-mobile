@@ -11,6 +11,10 @@
         android:title="Create album"
         app:showAsAction="never" />
     <item
+        android:id="@+id/action_prizes"
+        android:title="Prizes"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/action_about_us"
         android:title="About us"
         app:showAsAction="never" />
