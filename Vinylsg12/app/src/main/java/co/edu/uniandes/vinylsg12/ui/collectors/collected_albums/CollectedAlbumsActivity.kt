@@ -42,6 +42,11 @@ class CollectedAlbumsActivity : AppCompatActivity() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        viewModel.fetchCollectedAlbums()
+    }
+
     private fun subscribeToVariables(viewModel: CollectedAlbumsViewModel) {
         val recyclerView: RecyclerView = binding.albumsRecyclerView
         recyclerView.layoutManager = LinearLayoutManager(this)

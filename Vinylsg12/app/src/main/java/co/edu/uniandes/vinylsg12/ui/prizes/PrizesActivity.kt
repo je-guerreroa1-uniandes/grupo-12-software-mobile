@@ -10,7 +10,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import co.edu.uniandes.vinylsg12.R
 import co.edu.uniandes.vinylsg12.databinding.ActivityPrizesBinding
+import co.edu.uniandes.vinylsg12.ui.album.AlbumFormActivity
 import co.edu.uniandes.vinylsg12.ui.collectors.collected_albums.CollectedAlbumsActivity
+import co.edu.uniandes.vinylsg12.ui.prize.PrizeFormActivity
 import co.edu.uniandes.vinylsg12.ui.prizes.adapters.PrizeAdapter
 
 class PrizesActivity : AppCompatActivity() {
@@ -26,6 +28,9 @@ class PrizesActivity : AppCompatActivity() {
         setContentView(binding.root)
         subscribeToVariables()
         viewModel.fetchPrizes()
+        binding.addPrizeButton.setOnClickListener {
+            showAddPrizeActivity(it)
+        }
     }
 
     fun subscribeToVariables(){
@@ -38,6 +43,17 @@ class PrizesActivity : AppCompatActivity() {
             adapter.notifyDataSetChanged()
             binding.progressBar.visibility = View.GONE
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.fetchPrizes()
+    }
+
+    fun showAddPrizeActivity(view: View) {
+        val context = view.context
+        val intent = Intent(context, PrizeFormActivity::class.java)
+        context.startActivity(intent)
     }
 
     companion object {

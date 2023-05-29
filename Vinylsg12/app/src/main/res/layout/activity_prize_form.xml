@@ -4,10 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_photo"
-    tools:context=".ui.album.AlbumFormActivity">
-
-
+    tools:context=".ui.prize.PrizeFormActivity">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,12 +12,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
-
             <EditText
                 android:id="@+id/name"
                 style="@style/Theme.EditTextStyle"
@@ -42,13 +37,32 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+            <EditText
+                android:id="@+id/organization"
+                style="@style/Theme.EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/secondary_color"
 
+                android:drawableStart="@drawable/ic_musician"
+                android:ems="10"
+                android:hint="@string/hint_organization"
+                android:inputType="text"
+                android:maxLength="40"
+                android:maxLines="1"
+                android:minHeight="48dp"
+                android:paddingHorizontal="10dp"
+                android:singleLine="true"
+                android:textColor="@color/secondary_text"
+                android:textColorHint="@color/secondary_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
             <EditText
                 android:id="@+id/description"
                 style="@style/Theme.EditTextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:background="@color/secondary_color"
 
                 android:drawableStart="@drawable/ic_description"
@@ -63,60 +77,8 @@
                 android:textColor="@color/secondary_text"
                 android:textColorHint="@color/secondary_text"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
-
-            <EditText
-                android:id="@+id/cover"
-                style="@style/Theme.EditTextStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@color/secondary_color"
-
-                android:drawableStart="@drawable/ic_link"
-                android:ems="10"
-                android:hint="@string/hint_cover_url"
-                android:inputType="text"
-                android:maxLines="1"
-                android:minHeight="48dp"
-                android:paddingHorizontal="10dp"
-                android:singleLine="true"
-                android:textColor="@color/secondary_text"
-                android:textColorHint="@color/secondary_text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
-
-            <DatePicker
-                android:id="@+id/releaseDatePicker"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <Spinner
-                android:id="@+id/genre_spinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@color/white"
-                android:drawableStart="@drawable/ic_genre"
-                android:drawablePadding="8dp"
-                android:gravity="center_vertical"
-                android:minHeight="48dp"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp" />
-
-            <Spinner
-                android:id="@+id/recordLabel_spinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@color/white"
-                android:drawableStart="@drawable/ic_genre"
-                android:drawablePadding="8dp"
-                android:gravity="center_vertical"
-                android:minHeight="48dp"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp" />
-
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </LinearLayout>
     </ScrollView>
 
