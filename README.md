@@ -25,6 +25,12 @@ El proyecto se encuentra repartido entre las siguientes carpetas:
 
 ## Control de cambios
 
+### 2.0.0
+
+* Adición de detalle de banda
+* Adición de funcionalidad para agregar músico a banda
+* Micro optimizaciones
+
 ### 1.2.2
 
 #### Fix crear album
