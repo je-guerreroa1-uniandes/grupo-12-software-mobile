@@ -134,6 +134,19 @@ class MockMusicianService: MusicianService{
             }
         ]
     """.trimIndent()
+
+    val musicianJson = """   
+        {
+            "id": 1,
+            "name": "Rubén Blades Bellido de Luna",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ruben_Blades_by_Gage_Skidmore.jpg/800px-Ruben_Blades_by_Gage_Skidmore.jpg",
+            "description": "Es un cantante, compositor, músico, actor, abogado, político y activista panameño. Ha desarrollado gran parte de su carrera artística en la ciudad de Nueva York.",
+            "birthDate": "1948-07-16T05:00:00.000Z",
+            "albums": [],
+            "performerPrizes": []
+        }
+    """.trimIndent()
+
     override fun musicians(
         onComplete: (resp: List<Musician>) -> Unit,
         onError: (error: Exception) -> Unit
@@ -141,6 +154,19 @@ class MockMusicianService: MusicianService{
         try {
             val musicians = Gson().fromJson(musiciansJson, Array<Musician>::class.java).toList()
             onComplete(musicians)
+        } catch (e: Exception) {
+            onError(e)
+        }
+    }
+
+    override fun musician(
+        id: Int,
+        onComplete: (resp: Musician?) -> Unit,
+        onError: (error: Exception) -> Unit
+    ) {
+        try {
+            val musician = Gson().fromJson(musiciansJson, Musician::class.java)
+            onComplete(musician)
         } catch (e: Exception) {
             onError(e)
         }

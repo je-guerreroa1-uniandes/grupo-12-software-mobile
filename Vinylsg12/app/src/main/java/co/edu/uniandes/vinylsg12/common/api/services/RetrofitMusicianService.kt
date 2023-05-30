@@ -10,6 +10,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 import java.lang.Exception
 
 class RetrofitMusicianService: MusicianService {
@@ -45,8 +46,33 @@ class RetrofitMusicianService: MusicianService {
         })
     }
 
+    override fun musician(
+        id: Int,
+        onComplete: (resp: Musician?) -> Unit,
+        onError: (error: Exception) -> Unit
+    ) {
+        val call = api.musician(musicianId = id)
+        call.enqueue(object : Callback<Musician?> {
+            override fun onResponse(call: Call<Musician?>, response: Response<Musician?>) {
+                if (response.isSuccessful) {
+                    val musician = response.body()
+                    onComplete(musician)
+                } else {
+                    onError(Exception("Request failed with HTTP ${response.code()}"))
+                }
+            }
+
+            override fun onFailure(call: Call<Musician?>, t: Throwable) {
+                onError(Exception("Request failed: ${t.message}"))
+            }
+        })
+    }
+
     interface MusicianApi {
         @GET("musicians")
         fun musicians(): Call<List<Musician>>
+
+        @GET("musicians/{id}")
+        fun musician(@Path("id") musicianId: Int): Call<Musician?>
     }
 }
