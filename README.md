@@ -25,6 +25,11 @@ El proyecto se encuentra repartido entre las siguientes carpetas:
 
 ## Control de cambios
 
+### 2.1.0
+
+* Adición de listado de premios desde menú lateral
+* Adición de premios a músico
+
 ### 2.0.0
 
 * Adición de detalle de banda

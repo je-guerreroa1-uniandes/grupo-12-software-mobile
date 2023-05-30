@@ -5,13 +5,20 @@
     <item
         android:id="@+id/action_my_albums"
         android:title="My Albums"
-        android:icon="@drawable/ic_about"
+        android:icon="@drawable/ic_library_album_48px"
         />
     <item
         android:id="@+id/action_create_album"
         android:title="Create album"
-        android:icon="@drawable/ic_about"
+        android:icon="@drawable/ic_add_circle"
         />
+
+    <item
+        android:id="@+id/action_prizes"
+        android:title="Prizes"
+        android:icon="@drawable/ic_genre"
+        />
+
     <item
         android:id="@+id/action_about_us"
         android:title="About us"

@@ -55,7 +55,7 @@
                 android:ems="10"
                 android:hint="@string/hint_description"
                 android:inputType="text"
-                android:maxLength="40"
+                android:maxLength="250"
                 android:maxLines="1"
                 android:minHeight="48dp"
                 android:paddingHorizontal="10dp"

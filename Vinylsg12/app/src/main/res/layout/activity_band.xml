@@ -111,7 +111,7 @@
                             android:layout_weight="1" />
 
                         <ImageButton
-                            android:id="@+id/addMusicianButton"
+                            android:id="@+id/add_musician_button"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:layout_marginEnd="16dp"

@@ -15,6 +15,7 @@ import androidx.navigation.ui.setupWithNavController
 import co.edu.uniandes.vinylsg12.databinding.ActivityHomeBinding
 import co.edu.uniandes.vinylsg12.ui.about_us.AboutActivity
 import co.edu.uniandes.vinylsg12.ui.collectors.collected_albums.CollectedAlbumsActivity
+import co.edu.uniandes.vinylsg12.ui.prizes.PrizesActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
@@ -102,6 +103,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawerLayout.closeDrawer(GravityCompat.START)
         when(item.itemId) {
             R.id.action_my_albums -> CollectedAlbumsActivity.start(context=this)
+            R.id.action_prizes -> PrizesActivity.start(context=this)
             R.id.action_about_us -> AboutActivity.start(this)
         }
         return true

@@ -28,4 +28,5 @@
     <string name="title_activity_collected_albums">Collector\'s Album</string>
     <string name="hint_collected_album_price">Price</string>
     <string name="title_activity_band">BandActivity</string>
+    <string name="hint_organization">Organization\'s prize</string>
 </resources>

@@ -59,8 +59,8 @@ class RetrofitBandService: BandService {
         call.enqueue(object: Callback<Band?> {
             override fun onResponse(call: Call<Band?>, response: Response<Band?>) {
                 if (response.isSuccessful) {
-                    val musician = response.body()
-                    onComplete(musician)
+                    val band = response.body()
+                    onComplete(band)
                 } else {
                     onError(Exception("Request failed with HTTP ${response.code()}"))
                 }

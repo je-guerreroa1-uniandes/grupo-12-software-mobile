@@ -43,7 +43,6 @@ class RetrofitAlbumService : AlbumService {
                     onError(Exception("Request failed with HTTP ${response.code()}"))
                 }
             }
-
             override fun onFailure(call: Call<List<Album>>, t: Throwable) {
                 onError(Exception("Request failed: ${t.message}"))
             }
